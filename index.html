@@ -29,11 +29,16 @@
                 $scope.contatos.push({nome: $scope.nome, telefone: $scope.telefone, Morada: $scope.Morada,});
                 delete $scope.contato;
             };
-           
+           $scope.apagarContatos = function () {
+            console.log(contatos)
+           };
         });
  </script>
 
  <style>
+    body {
+        background-color: black;
+    }
     .bg-info{
         background-color: rgb(45, 33, 56);
         color: white;
@@ -45,10 +50,11 @@
         transition: 1s;
     }
     .jumbotron{
-        width: 60%;
+        width: 30%;
         margin-top: 20px;
         margin-left: auto; 
         margin-right: auto; 
+        border-radius: 6px;
     }
     .table{
         margin-top: 20px;
@@ -114,6 +120,7 @@
 
 
     <button class="btn btn-primary btn-block   "  ng-click="adicionarContato(nome, telefone, Morada)" class="bg-info" ng-disabled=" !nome || !telefone || !Morada">Adicionar Contato</button>
+    <button class="btn btn-danger btn-block   "  ng-click="apagarContatos()">Adicionar Contato</button>
 </div>
 
 
